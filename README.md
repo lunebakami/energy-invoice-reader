@@ -24,7 +24,7 @@ cd energy-invoice-reader
 cd backend
 
 # Instale as dependências
-npm setup
+yarn setup
 
 # Preencha o arquivo .env
 cp .env.example .env
@@ -33,7 +33,7 @@ cp .env.example .env
 cd ../frontend
 
 # Instale as dependências
-npm install
+yarn
 
 # Preencha o arquivo .env
 cp .env.example .env
@@ -52,7 +52,7 @@ cd energy-invoice-reader
 cd backend
 
 # Inicie o servidor
-npm start
+yarn start
 
 # O servidor estará rodando em http://localhost:3000
 
@@ -60,7 +60,7 @@ npm start
 cd ../frontend
 
 # Inicie o client
-npm start
+yarn dev
 # O client estará rodando em http://localhost:5173
 ```
 
@@ -75,7 +75,7 @@ cd energy-invoice-reader
 cd backend
 
 # Rode os testes
-npm test
+yarn test
 ```
 
 ## Contribuição
