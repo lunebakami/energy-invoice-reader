@@ -104,9 +104,9 @@ export default function Chart({ invoices }: { invoices: Invoice[] }) {
   }, [invoices]);
 
   return (
-    <div>
-      <Line options={energyOptions} data={energyChartData} />
-      <Line options={monetaryOptions} data={monetaryChartData} />
+    <div className="w-2/4 flex flex-row">
+      <Line className="w-2/4" options={energyOptions} data={energyChartData} />
+      <Line className="w-2/4" options={monetaryOptions} data={monetaryChartData} />
     </div>
   );
 }

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Invoice } from "./Dashboard";
 import api from "../services/api";
 import { downloadFile } from "../services/supabase";
+import InvoiceCard from "../components/InvoiceCard";
 
 export default function Invoices() {
   const [invoices, setInvoices] = useState<Invoice[]>([]);
@@ -17,22 +18,10 @@ export default function Invoices() {
   }, []);
 
   return (
-    <div>
-      <h1> Invoices </h1>
-      <ul>
+      <div className="grid grid-cols-4 gap-4 place-items-center m-8">
         {invoices.map((invoice) => (
-          <li key={invoice.id}>
-            <span> Date: {invoice.month} </span>
-
-            <a
-              href={downloadFile(invoice.file_name)}
-              download
-            >
-              <button> Download </button>
-            </a>
-          </li>
+            <InvoiceCard invoice={invoice} />
         ))}
-      </ul>
-    </div>
+      </div>
   );
 }

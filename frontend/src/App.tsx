@@ -1,7 +1,7 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Dashboard from "./pages/Dashboard";
 import Invoices from "./pages/Invoices";
-import { Layout } from "./components/Layout";
+import Layout from "./components/Layout";
 import AddInvoice from "./pages/AddInvoice";
 
 function App() {
