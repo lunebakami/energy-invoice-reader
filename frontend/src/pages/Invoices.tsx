@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { Invoice } from "./Dashboard";
 import api from "../services/api";
-import { downloadFile } from "../services/supabase";
 import InvoiceCard from "../components/InvoiceCard";
 
 export default function Invoices() {
