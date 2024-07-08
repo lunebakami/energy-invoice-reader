@@ -21,6 +21,19 @@ export const uploadFile = async (file: File) => {
   return { success };
 };
 
+export const deleteFile = async (filename: string) => {
+  let success = false;
+  const { error } = await supabase.storage.from("invoices").remove([filename]);
+
+  if (error) {
+    console.log("Error deleting file: " + error.message);
+  } else {
+    success = true;
+  }
+
+  return { success };
+}
+
 export const downloadFile = (filename: string) => {
   const { data } = supabase.storage
     .from("invoices")

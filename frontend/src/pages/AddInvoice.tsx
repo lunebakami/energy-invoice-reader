@@ -1,6 +1,6 @@
 import { FormEvent, useState } from "react";
 import api from "../services/api";
-import { uploadFile } from "../services/supabase";
+import { deleteFile, uploadFile } from "../services/supabase";
 import { useNavigate } from "react-router-dom";
 
 export default function AddInvoice() {
@@ -34,6 +34,7 @@ export default function AddInvoice() {
       if (result.status === 200) {
         return navigate("/");
       } else {
+        await deleteFile(file.name);
         alert("Erro ao adicionar fatura!");
       }
     } catch (error) {
